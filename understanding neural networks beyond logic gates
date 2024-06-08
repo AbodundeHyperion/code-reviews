@@ -1,0 +1,61 @@
+1. Neurons and Layers:
+   - Neurons: The basic units of a neural network, also called nodes. Each neuron receives inputs, processes them, and produces an output.
+   - Layers: Neural networks are typically organized into layers, including input layers, hidden layers, and output layers. Each layer consists of multiple neurons.
+
+2. Activation Functions:
+   - Activation functions introduce non-linearity into the model, allowing the network to learn complex patterns. Common activation functions include:
+     - Sigmoid: \( \sigma(x) = \frac{1}{1 + e^{-x}} \)
+     - ReLU (Rectified Linear Unit): \( f(x) = \max(0, x) \)
+     - Tanh: \( \tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}} \)
+     - Softmax: Used for multi-class classification to output a probability distribution.
+
+3. Forward Propagation:
+   - The process of passing inputs through the network to get the output. It involves matrix multiplications and applying activation functions.
+
+4. Loss Functions:
+   - Used to measure the difference between the predicted output and the actual output. Common loss functions include:
+     - Mean Squared Error (MSE): For regression tasks.
+     - Cross-Entropy Loss: For classification tasks.
+
+5. Backpropagation:
+   - The process of updating the weights and biases in the network by calculating the gradient of the loss function with respect to each parameter and using optimization algorithms like gradient descent.
+
+6. Gradient Descent and Optimization:
+   - Gradient Descent: An optimization algorithm used to minimize the loss function by iteratively updating the parameters in the direction of the negative gradient.
+   - Variants include:
+     - Stochastic Gradient Descent (SGD)
+     - Mini-batch Gradient Descent
+     - Adam (Adaptive Moment Estimation)
+
+7. Learning Rate:
+   - A hyperparameter that determines the step size during the parameter update. Proper tuning of the learning rate is crucial for efficient training.
+
+8. Overfitting and Regularization:
+   - Overfitting: When a model performs well on training data but poorly on test data.
+   - Regularization: Techniques to prevent overfitting, such as:
+     - L2 Regularization (Ridge): Adds a penalty proportional to the square of the magnitude of the coefficients.
+     - L1 Regularization (Lasso): Adds a penalty proportional to the absolute value of the coefficients.
+     - Dropout: Randomly drops neurons during training to prevent co-adaptation.
+
+9. Batch Normalization:
+   - A technique to normalize the inputs of each layer to stabilize and accelerate the training process.
+
+10. Data Preprocessing:
+    - Preparing the data before feeding it into the neural network, including normalization, standardization, and handling missing values.
+
+11. Model Evaluation and Metrics:
+    - Evaluating the performance of the model using metrics like accuracy, precision, recall, F1-score for classification, and RMSE for regression.
+
+12. Hyperparameter Tuning:
+    - The process of finding the optimal set of hyperparameters (e.g., learning rate, number of layers, number of neurons) to improve model performance.
+
+13. Transfer Learning:
+    - Using pre-trained models on large datasets and fine-tuning them for specific tasks, which can save time and computational resources.
+
+14. Neural Network Architectures:
+    - Convolutional Neural Networks (CNNs): Specialized for image data.
+    - Recurrent Neural Networks (RNNs): Designed for sequential data.
+    - Generative Adversarial Networks (GANs): For generating new data.
+    - Autoencoders: For unsupervised learning tasks like dimensionality reduction and anomaly detection.
+
+Understanding these concepts is essential for effectively building, training, and deploying neural network models.
