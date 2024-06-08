@@ -1,0 +1,33 @@
+import gensim
+from gensim import corpora
+
+# Sample documents
+documents = [
+"Machine learning is the future of AI",
+"Natural language processing is a key technology in AI",
+"Topic modeling is a technique used in text analysis",
+"Data science involves analyzing large datasets",
+"Deep learning is a subset of machine learning"
+]
+
+# Tokenize each document into words
+tokenized_docs = [doc.split() for doc in documents]
+
+# Create a dictionary mapping words to numerical IDs
+dictionary = corpora.Dictionary(tokenized_docs)
+
+# Convert tokenized documents into a document-term matrix
+corpus = [dictionary.doc2bow(doc) for doc in tokenized_docs]
+
+# Train LDA model
+lda_model = gensim.models.LdaModel(corpus, num_topics=2, id2word=dictionary, passes=10)
+
+# Print the topics and their corresponding words
+for idx, topic in lda_model.print_topics(-1):
+print(f"Topic {idx}: {topic}")
+
+# Get the topic distribution for a new document
+new_doc = "AI and machine learning are revolutionizing industries"
+new_doc_bow = dictionary.doc2bow(new_doc.split())
+print("\nTopic distribution for new document:")
+print(lda_model.get_document_topics(new_doc_bow))
