@@ -1,0 +1,12 @@
+try:
+# Open a file for reading
+with open("example.txt", "r") as file:
+# Read the contents of the file
+contents = file.read()
+print("File contents:", contents)
+except FileNotFoundError:
+print("Error: File not found!")
+except IOError as e:
+print("Error:", e)
+except Exception as e:
+print("An unexpected error occurred:", e)
