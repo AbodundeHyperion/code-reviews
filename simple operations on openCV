@@ -1,0 +1,21 @@
+#RESIZING AN IMAGE
+
+resized_image = cv2.resize(image, (width, height))
+cv2.imshow('Resized Image', resized_image)
+
+#DRAWING SHAPES
+
+# Draw a rectangle
+cv2.rectangle(image, (startX, startY), (endX, endY), (255, 0, 0), 2)
+
+# Draw a circle
+cv2.circle(image, (centerX, centerY), radius, (0, 255, 0), 2)
+
+# Draw a line
+cv2.line(image, (startX, startY), (endX, endY), (0, 0, 255), 2)
+
+cv2.imshow('Shapes', image)
+
+#SAVING AN IMAGE
+
+cv2.imwrite('output_path.jpg', image)
