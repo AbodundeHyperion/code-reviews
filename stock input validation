@@ -1,0 +1,28 @@
+# Calculate the total value of items based on stock and price
+
+# Menu items
+menu = ["a", "b", "c", "d"]
+
+# Stock levels for each item
+stock = {"a": 50, "b": 100, "c": 150, "d": 120}
+
+# Price for each item
+price = {"a": 3, "b": 1.5, "c": 3, "d": 2.5}
+
+# Initialize total stock value
+total_stock = 0
+
+# Iterate through each item in the menu
+for item in menu:
+try:
+# Calculate the value of the current item
+item_value = stock[item] * price[item]
+
+# Add the item value to the total
+total_stock += item_value
+except KeyError:
+# Handle missing items in stock or price dictionaries
+print(f"Error: {item} not found in stock or price dictionaries.")
+
+# Print the total stock value
+print(f"Total value of all the stocks is: {total_stock}")
