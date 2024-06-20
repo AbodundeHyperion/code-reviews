@@ -1,0 +1,114 @@
+1. Violin Plot:
+import seaborn as sns
+# Load dataset
+tips = sns.load_dataset("tips")
+# Create violin plot
+sns.violinplot(x="day", y="total_bill", data=tips)
+plt.xlabel('Day of the Week')
+plt.ylabel('Total Bill')
+plt.title('Violin Plot of Total Bill by Day')
+plt.show()
+2. HeatMap:
+import seaborn as sns
+# Load dataset
+flights = sns.load_dataset("flights")
+# Reshape data for heatmap
+flights_pivot = flights.pivot_table(index='month', columns='year', values='passengers')
+# Create heatmap
+sns.heatmap(flights_pivot, cmap='YlGnBu')
+plt.xlabel('Year')
+plt.ylabel('Month')
+plt.title('Passenger Count Heatmap')
+plt.show()
+3. Pair Plot:
+import seaborn as sns
+# Load dataset
+iris = sns.load_dataset("iris")
+# Create pair plot
+sns.pairplot(iris, hue="species")
+plt.title('Pair Plot of Iris Dataset')
+plt.show()
+4. 3D Scatter Plot:
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+# Generate random data
+x = range(100)
+y = [i ** 2 for i in x]
+z = [i ** 3 for i in x]
+# Create 3D scatter plot
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+ax.scatter(x, y, z)
+ax.set_xlabel('X-axis')
+ax.set_ylabel('Y-axis')
+ax.set_zlabel('Z-axis')
+ax.set_title('3D Scatter Plot')
+plt.show()
+For interactive visualizations, Plotly is a popular choice due to its rich interactive features. Here are some examples of interactive visualizations using Plotly:
+5 Interactive Line Plot:
+import plotly.graph_objs as go
+# Sample data
+x_values = [1, 2, 3, 4, 5]
+y_values = [10, 15, 13, 17, 18]
+# Create trace for line plot
+trace = go.Scatter(
+x = x_values,
+y = y_values,
+mode = 'lines+markers',
+name = 'Line Plot'
+)
+# Create layout
+layout = go.Layout(
+title = 'Interactive Line Plot',
+xaxis = dict(title = 'X-axis'),
+yaxis = dict(title = 'Y-axis')
+)
+# Create figure
+fig = go.Figure(data=[trace], layout=layout)
+# Display interactive plot
+fig.show()
+6. Interactive Bar Chart:
+import plotly.graph_objs as go
+# Sample data
+categories = ['A', 'B', 'C', 'D']
+values = [20, 30, 25, 35]
+# Create trace for bar chart
+trace = go.Bar(
+x = categories,
+y = values,
+name = 'Bar Chart'
+)
+# Create layout
+layout = go.Layout(
+title = 'Interactive Bar Chart',
+xaxis = dict(title = 'Categories'),
+yaxis = dict(title = 'Values')
+)
+# Create figure
+fig = go.Figure(data=[trace], layout=layout)
+# Display interactive plot
+fig.show()
+7. Interactive Bubble Chart:
+import plotly.graph_objs as go
+# Sample data
+x_values = [1, 2, 3, 4, 5]
+y_values = [10, 15, 13, 17, 18]
+sizes = [30, 40, 50, 60, 70]
+# Create trace for bubble chart
+trace = go.Scatter(
+x = x_values,
+y = y_values,
+mode = 'markers',
+marker = dict(size = sizes),
+name = 'Bubble Chart'
+)
+# Create layout
+layout = go.Layout(
+title = 'Interactive Bubble Chart',
+xaxis = dict(title = 'X-axis'),
+yaxis = dict(title = 'Y-axis')
+)
+# Create figure
+fig = go.Figure(data=[trace], layout=layout)
+# Display interactive plot
+fig.show()
