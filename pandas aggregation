@@ -1,0 +1,49 @@
+1. Grouping and Aggregation:
+
+# Grouping by a column and calculating mean and sum
+df.groupby('category').agg({'price': 'mean', 'quantity': 'sum'})
+
+
+2. Pivoting Data:
+
+# Creating a pivot table
+df.pivot_table(index='date', columns='category', values='sales', aggfunc='sum')
+
+
+3. Merging DataFrames:
+# Merging two DataFrames on a common column
+merged_df = pd.merge(df1, df2, on='common_column')
+
+4. Reshaping Data:
+# Melting the DataFrame
+pd.melt(df, id_vars=['id', 'name'], value_vars=['var1', 'var2'], var_name='variable', value_name='value')
+
+
+5. Filtering Rows:
+# Filtering rows based on a condition
+filtered_df = df[df['column'] > 10]
+
+
+6. Applying Functions:
+# Applying a function to a DataFrame
+df['new_column'] = df['existing_column'].apply(lambda x: custom_function(x))
+
+7. Handling Missing Values:
+# Filling missing values with a specified value
+df.fillna(0, inplace=True)
+
+8. Sorting Data:
+# Sorting DataFrame by one or more columns
+df.sort_values(by=['col1', 'col2'], ascending=[True, False], inplace=True)
+
+
+9. Dropping Columns:
+# Dropping columns from DataFrame
+df.drop(columns=['col1', 'col2'], inplace=True)
+
+
+10. Applying Custom Aggregations:
+# Applying custom aggregation function
+def custom_agg(x):
+return np.mean(x) - np.std(x)
+df.groupby('category').agg({'price': custom_agg})
