@@ -1,0 +1,11 @@
+import nltk
+from nltk.tokenize import word_tokenize
+
+# Download NLTK resources (only need to run once)
+nltk.download('punkt')
+
+# Tokenize text using NLTK
+text = "This is a sample sentence for tokenization."
+tokens = word_tokenize(text)
+print(tokens)
+
