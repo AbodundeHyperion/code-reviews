@@ -1,0 +1,28 @@
+num = 0
+numbers = []
+
+while True:
+    try:
+        # Asks the user to enter a number:
+        num = int(input("Please, enter a number: "))
+        
+        # Check if the entered number is -1
+        if num == -1:
+            if not numbers:
+                print("You must enter at least one number before -1. Please try again.")
+            else:
+                break
+        else:
+            numbers.append(num)
+
+    except ValueError:
+        # Handle the case when a non-integer value is entered.
+        print("Invalid input. Please enter a valid integer.")
+        continue
+
+# The average of the numbers entered
+if numbers:
+    average = round(sum(numbers) / len(numbers), 2)
+    print(f"The average of the numbers entered is {average}")
+else:
+    print("No numbers entered.")
