@@ -1,0 +1,12 @@
+gardenpathSentences = [
+"The keys on the table shine at night.",
+"The match on the table was striking."
+]
+
+extension = ["Mary gave the child a Band-Aid.",
+"That Jill is never here hurts.",
+"The cotton clothing is made of grows in Mississippi."]
+
+for sent in extension:
+gardenpathSentences.append(sent)
+Or better still, you could look to use the .extend() syntax
