@@ -1,0 +1,28 @@
+def minesweeper(grid_list):
+    free_spot = [(-1,-1), (-1,0), (-1,1), (0,-1), (0,1), (1,-1), (1,0), (1,1)]
+    mine = [["#" if cell == "#" else 0 for cell in row] for row in grid_list]
+
+    for r, row in enumerate(grid_list):
+        for c, cell in enumerate(row):
+            if cell == "-":
+                for dr, dc in free_spot:
+                    nr, nc = r + dr, c + dc
+                    if 0 <= nr < len(grid_list) and 0 <= nc < len(row):
+                        if grid_list[nr][nc] == "#":
+                            mine[r][c] += 1
+
+    # Convert all non-mine cells to strings for the final output
+    return [["#" if cell == "#" else str(cell) for cell in row] for row in mine]
+
+# Example usage
+grid_list = [
+    ["-", "-", "-", "#", "#"],
+    ["-", "#", "-", "-", "-"],
+    ["-", "-", "#", "-", "-"],
+    ["-", "#", "#", "-", "-"],
+    ["-", "-", "-", "-", "-"]
+]
+
+result = minesweeper(grid_list)
+for row in result:
+    print(row)
