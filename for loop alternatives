@@ -1,0 +1,16 @@
+rows = 5 # Adjust the number of rows as needed
+
+for x in range(rows * 2):
+num_stars = x + 1 if x < rows else 2 * rows - x - 1
+print("* " * num_stars)
+
+OR
+
+for x in range(10):
+num_stars = x if x < 5 else 2 * 5 - x
+print("* " * num_stars)
+
+OR
+
+for x in range(10):
+print( x * '* ' if x < 5 else (2 * 5 - x) * '* ')
