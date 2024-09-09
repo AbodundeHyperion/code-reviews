@@ -1,0 +1,14 @@
+
+for item in menu:
+    try:
+        # Calculate the value of the current item
+        item_value = stock[item] * price[item]
+
+        # Add the item value to the total
+        total_stock += item_value
+    except KeyError:
+        # Handle missing items in stock or price dictionaries
+        print(f"Error: {item} not found in stock or price dictionaries.")
+
+# Print the total stock value
+print(f"Total value of all the stocks is: {total_stock}")
